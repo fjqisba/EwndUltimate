@@ -10,50 +10,29 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="public.h" />
-    <QtMoc Include="MainWindow.h" />
-    <ClInclude Include="Ewnd.h" />
-    <ClInclude Include="plugin.h" />
-    <ClInclude Include="pluginmain.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Ewnd.cpp" />
-    <ClCompile Include="MainWindow.cpp" />
-    <ClCompile Include="plugin.cpp" />
-    <ClCompile Include="pluginmain.cpp" />
-    <ClCompile Include="public.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="MainWindow.ui" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="Resource.qrc" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F2D37442-9A65-4C3D-8D12-7E72CC572F10}</ProjectGuid>
+    <ProjectGuid>{9B1069C0-C5A0-4396-B263-D0C40109DCC7}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
-    <UseOfMfc>Static</UseOfMfc>
+    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
-    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
-    <QtInstall>5.6.1_msvc2015</QtInstall>
+    <QtInstall>5.6.3_msvc2015</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -77,34 +56,29 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
-    <OutDir>D:\fjqisba\x64Dbg\release\x32\plugins\</OutDir>
     <TargetExt>.dp32</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
     <TargetExt>.dp32</TargetExt>
-    <OutDir>D:\fjqisba\x64Dbg\release\x32\plugins\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>PLUGIN_NAME="Ewnd Ultimate";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\fjqisba\source\repos\PluginTemplate-cmake\build\_deps\x64dbg-src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/execution-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\x64dbg-sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/Users/fjqisba/source/repos/PluginTemplate-cmake/build/_deps/x64dbg-src;C:/Users/fjqisba/source/repos/PluginTemplate-cmake/build/_deps/x64dbg-src/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <UACUIAccess>false</UACUIAccess>
-      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <AdditionalLibraryDirectories>..\x64dbg-sdk;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>PLUGIN_NAME="Ewnd Ultimate";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\fjqisba\source\repos\PluginTemplate-cmake\build\_deps\x64dbg-src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\x64dbg-sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:/Users/fjqisba/source/repos/PluginTemplate-cmake/build/_deps/x64dbg-src;C:/Users/fjqisba/source/repos/PluginTemplate-cmake/build/_deps/x64dbg-src/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../x64dbg-sdk;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -134,6 +108,26 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Ewnd.h" />
+    <ClInclude Include="plugin.h" />
+    <ClInclude Include="pluginmain.h" />
+    <ClInclude Include="public.h" />
+    <QtMoc Include="MainWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ewnd.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="plugin.cpp" />
+    <ClCompile Include="pluginmain.cpp" />
+    <ClCompile Include="public.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Resource.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MainWindow.ui" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

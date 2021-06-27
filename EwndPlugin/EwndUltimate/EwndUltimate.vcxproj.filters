@@ -23,49 +23,49 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="plugin.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pluginmain.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Ewnd.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="public.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pluginmain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pluginmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="plugin.cpp">
+    <ClCompile Include="Ewnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainWindow.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Ewnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="public.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="MainWindow.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
+    <ClCompile Include="plugin.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pluginmain.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainWindow.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Resource.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="MainWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
